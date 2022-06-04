@@ -54,7 +54,7 @@ INSERT INTO People (fullName, motherFullName, fatherFullName, dateOfBirth) VALUE
 ```
 SELECT * FROM People;
 ```
-![alt text]([https://i.ibb.co/rmYLPnN/2022-06-04-00-51-28.png](https://i.ibb.co/HNpq8Mn/1.png))
+![alt text](https://i.ibb.co/8z49ZR6/1.png)
 
 Подробнее можно посмотреть здесь [https://www.db-fiddle.com/f/tDeE57pUtskXkygjU8ksej/2](https://www.db-fiddle.com/f/tDeE57pUtskXkygjU8ksej/2)
 
