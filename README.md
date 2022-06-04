@@ -24,26 +24,37 @@ create table People
 ```
 Создадим небольшое генеалогическое дерево
 
-![alt text](https://i.ibb.co/1G1Ft0m/alpha1.png)
+![alt text](https://i.ibb.co/ZLnvC9P/alpha1.png)
 
 с помощью 
 ```
+create table People
+(
+  fullName varchar(30) primary key,
+  motherFullName varchar(30),
+  fatherFullName varchar(30),
+  dateOfBirth date,
+  
+  FOREIGN KEY (motherFullName) REFERENCES People(fullName),
+  FOREIGN KEY (fatherFullName) REFERENCES People(fullName)
+);
+
 INSERT INTO People (fullName, motherFullName, fatherFullName, dateOfBirth) VALUES ('Ann Korablina', null , null, '1948-05-29');
 INSERT INTO People (fullName, motherFullName, fatherFullName, dateOfBirth) VALUES ('Andrey Prikota', null , null, '1947-03-01');
 INSERT INTO People (fullName, motherFullName, fatherFullName, dateOfBirth) VALUES ('Lena Prikota', 'Ann Korablina' , 'Andrey Prikota', '1972-01-08');
 
 INSERT INTO People (fullName, motherFullName, fatherFullName, dateOfBirth) VALUES ('Sveta Orlova', null , null, '1950-10-02');
 INSERT INTO People (fullName, motherFullName, fatherFullName, dateOfBirth) VALUES ('Nikita Ivanov', null , null, '1949-08-21');
-INSERT INTO People (fullName, motherFullName, fatherFullName, dateOfBirth) VALUES ('Sergay Ivanov', 'Sveta Orlova' , 'Nikita Ivanov', '1971-04-10');
+INSERT INTO People (fullName, motherFullName, fatherFullName, dateOfBirth) VALUES ('Sergey Ivanov', 'Sveta Orlova' , 'Nikita Ivanov', '1971-04-10');
 
-INSERT INTO People (fullName, motherFullName, fatherFullName, dateOfBirth) VALUES ('Vika Ivanova', 'Lena Prikota' , 'Sergay Ivanov', '2001-03-15');
+INSERT INTO People (fullName, motherFullName, fatherFullName, dateOfBirth) VALUES ('Vika Ivanova', 'Lena Prikota' , 'Sergey Ivanov', '2001-03-15');
 ```
 
 Выведем созданную таблицу 
 ```
 SELECT * FROM People;
 ```
-![alt text](https://i.ibb.co/rmYLPnN/2022-06-04-00-51-28.png)
+![alt text]([https://i.ibb.co/rmYLPnN/2022-06-04-00-51-28.png](https://i.ibb.co/HNpq8Mn/1.png))
 
 Подробнее можно посмотреть здесь [https://www.db-fiddle.com/f/tDeE57pUtskXkygjU8ksej/2](https://www.db-fiddle.com/f/tDeE57pUtskXkygjU8ksej/2)
 
